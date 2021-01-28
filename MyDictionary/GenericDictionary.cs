@@ -11,15 +11,12 @@ namespace MyDictionary
 
             Tkey[] tempKeyArray;
             TValue[] tempValueArray;
-        public MyGenericDictionary()
-        
+            
+         public MyGenericDictionary()
             {
-
                 keyArray = new Tkey[0];
                 valueArray = new TValue[0];
-            
             }
-
 
             public void Add(Tkey key, TValue value)
             {
@@ -29,7 +26,7 @@ namespace MyDictionary
                 keyArray = new Tkey[keyArray.Length + 1];
                 valueArray = new TValue[valueArray.Length + 1];
 
-                for (int i = 0; i < keyArray.Length - 1; i++)
+                for (int i = 0; i < tempKeyArray.Length; i++)
                 {
                     keyArray[i] = tempKeyArray[i];
                     valueArray[i] = tempValueArray[i];
@@ -37,7 +34,6 @@ namespace MyDictionary
 
                 keyArray[keyArray.Length - 1] = key;
                 valueArray[valueArray.Length - 1] = value;
-
             }
 
             public Tkey[] Items1
