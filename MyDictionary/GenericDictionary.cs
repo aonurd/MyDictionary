@@ -4,26 +4,26 @@ using System.Text;
 
 namespace MyDictionary
 {
-        class MyGenericDictionary<Tkey, TValue>
+        class MyGenericDictionary<TKey, TValue>
         {
-            Tkey[] keyArray;
+            TKey[] keyArray;
             TValue[] valueArray;
 
-            Tkey[] tempKeyArray;
+            TKey[] tempKeyArray;
             TValue[] tempValueArray;
             
          public MyGenericDictionary()
             {
-                keyArray = new Tkey[0];
+                keyArray = new TKey[0];
                 valueArray = new TValue[0];
             }
 
-            public void Add(Tkey key, TValue value)
+            public void Add(TKey key, TValue value)
             {
                 tempKeyArray = keyArray;
                 tempValueArray = valueArray;
 
-                keyArray = new Tkey[keyArray.Length + 1];
+                keyArray = new TKey[keyArray.Length + 1];
                 valueArray = new TValue[valueArray.Length + 1];
 
                 for (int i = 0; i < tempKeyArray.Length; i++)
@@ -36,7 +36,7 @@ namespace MyDictionary
                 valueArray[valueArray.Length - 1] = value;
             }
 
-            public Tkey[] Items1
+            public TKey[] Items1
             {
                 get { return keyArray; }
             }
